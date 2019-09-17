@@ -1,9 +1,7 @@
 package com.szkaminski.demo.backend.model;
 
-import javax.persistence.Column;
-import javax.persistence.GeneratedValue;
-import javax.persistence.GenerationType;
-import javax.persistence.Id;
+import javax.persistence.*;
+import java.util.List;
 
 public class User {
 
@@ -18,5 +16,6 @@ public class User {
     private String password;
 
     @Column(name = "bill")
-    private Bill bill;
+    @ManyToMany(fetch = FetchType.EAGER, cascade = CascadeType.ALL, mappedBy = "user")
+    private List<Bill> bills;
 }
