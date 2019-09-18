@@ -1,9 +1,18 @@
 package com.szkaminski.demo.backend.model;
 
+import lombok.AllArgsConstructor;
+import lombok.Data;
+import lombok.NoArgsConstructor;
+
 import javax.persistence.*;
 import java.math.BigDecimal;
 import java.time.LocalDateTime;
 
+@Data
+@AllArgsConstructor
+@NoArgsConstructor
+@Entity
+@Table(name = "expanditure")
 public class Expenditure {
 
 
@@ -21,6 +30,6 @@ public class Expenditure {
     @Enumerated
     private Type type;
 
-    @Column(name = "user")
+    @ManyToOne
     private User user;
 }
