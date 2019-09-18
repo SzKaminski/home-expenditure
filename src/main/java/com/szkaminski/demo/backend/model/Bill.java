@@ -31,4 +31,11 @@ public class Bill {
 
     @Column(name = "yearOfDeleted")
     private Year yearOfDeleted;
+
+    public Bill(List<User> owners, BigDecimal sum, Year yearOfCreation, Year yearOfDeleted) {
+        this.owners = owners;
+        this.sum = sum;
+        this.yearOfCreation = yearOfCreation;
+        this.yearOfDeleted = yearOfDeleted;
+    }
 }
