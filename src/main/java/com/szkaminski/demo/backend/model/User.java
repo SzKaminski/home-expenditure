@@ -1,16 +1,15 @@
 package com.szkaminski.demo.backend.model;
 
-import lombok.AllArgsConstructor;
-import lombok.Data;
-import lombok.NoArgsConstructor;
+import lombok.*;
 
 import javax.persistence.*;
 import java.util.List;
 
-@Data
 @AllArgsConstructor
 @NoArgsConstructor
 @Entity
+@Getter
+@Setter
 @Table(name = "user")
 public class User {
 
@@ -29,4 +28,5 @@ public class User {
 
     @OneToMany
     private List<Expenditure> expenditures;
+
 }
