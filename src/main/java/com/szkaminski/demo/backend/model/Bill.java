@@ -23,6 +23,12 @@ public class Bill {
     @ManyToMany(fetch = FetchType.EAGER, cascade = CascadeType.ALL)
     private List<User> owners;
 
+    @OneToMany
+    private List<Expenditure> expenditures;
+
+    @Column(name = "name")
+    private String name;
+
     @Column(name = "sum")
     private BigDecimal sum;
 
@@ -32,8 +38,10 @@ public class Bill {
     @Column(name = "yearOfDeleted")
     private Year yearOfDeleted;
 
-    public Bill(List<User> owners, BigDecimal sum, Year yearOfCreation, Year yearOfDeleted) {
+    public Bill(List<User> owners, List<Expenditure> expenditures, String name, BigDecimal sum, Year yearOfCreation, Year yearOfDeleted) {
         this.owners = owners;
+        this.expenditures = expenditures;
+        this.name = name;
         this.sum = sum;
         this.yearOfCreation = yearOfCreation;
         this.yearOfDeleted = yearOfDeleted;

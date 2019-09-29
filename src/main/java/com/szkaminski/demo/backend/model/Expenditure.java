@@ -6,7 +6,7 @@ import lombok.NoArgsConstructor;
 
 import javax.persistence.*;
 import java.math.BigDecimal;
-import java.time.LocalDateTime;
+import java.time.LocalDate;
 
 @Data
 @AllArgsConstructor
@@ -21,7 +21,7 @@ public class Expenditure {
     private Long id;
 
     @Column(name = "date")
-    private LocalDateTime date;
+    private LocalDate date;
 
     @Column(name = "amount")
     private BigDecimal amount;
@@ -32,4 +32,7 @@ public class Expenditure {
 
     @ManyToOne
     private User user;
+
+    @ManyToOne
+    private Expenditure expenditure;
 }

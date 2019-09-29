@@ -14,4 +14,8 @@ public class BillService {
     public Bill addNewBill(Bill bill){
         return billRepository.save(bill);
     }
+
+    public Bill getByName(String name) {
+        return billRepository.findByName(name);
+    }
 }
