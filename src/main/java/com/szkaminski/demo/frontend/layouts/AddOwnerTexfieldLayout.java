@@ -37,6 +37,7 @@ class AddOwnerTexfieldLayout extends VerticalLayout {
         NEW_OWNERTEXFIELD_BUTTON = new Button("add new ");
         SAVE_BUTTON = new Button("open new bill");
         add(addOwnerTextfield);
+
         Div buttons = new Div(NEW_OWNERTEXFIELD_BUTTON, SAVE_BUTTON);
         add(buttons);
 
@@ -59,7 +60,7 @@ class AddOwnerTexfieldLayout extends VerticalLayout {
             if (userBinder.validate().isOk()) {
                 addToNewOwnerList(addOwnerTextfield);
                 for (String name : ownerTextfieldsListValues) {
-                    if (userService.findByName(name) != null || name.equals("szymon")) {
+                    if (userService.findByName(name) != null) {
                         Notification.show("find " + name);
                         FrontUI.getNewBillLayout().setVisible(false);
                     } else {

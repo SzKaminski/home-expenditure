@@ -8,10 +8,9 @@ public class NewBillLayout extends VerticalLayout {
 
     private AddOwnerTexfieldLayout owners;
 
-    public NewBillLayout(@Autowired UserService userService) {
+    public NewBillLayout(UserService userService) {
         setVisible(false);
         owners = new AddOwnerTexfieldLayout(userService);
         add(owners);
-       // Bill bill = new Bill();
     }
 }
