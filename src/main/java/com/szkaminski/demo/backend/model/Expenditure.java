@@ -29,10 +29,10 @@ public class Expenditure {
     @Column(name = "type")
     @Enumerated
     private Type type;
+/*
+    @ManyToOne
+    private User user;*/
 
     @ManyToOne
-    private User user;
-
-    @ManyToOne
-    private Expenditure expenditure;
+    private Bill bill;
 }

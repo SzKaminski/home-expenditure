@@ -26,7 +26,7 @@ public class User {
     @ManyToMany(fetch = FetchType.EAGER, cascade = CascadeType.ALL)
     private List<Bill> bills;
 
-    @OneToMany
-    private List<Expenditure> expenditures;
+    /*@OneToMany
+    private List<Expenditure> expenditures;*/
 
 }

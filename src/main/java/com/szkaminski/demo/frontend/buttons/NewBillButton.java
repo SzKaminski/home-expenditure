@@ -6,7 +6,7 @@ import com.vaadin.flow.component.button.Button;
 public class NewBillButton extends Button {
 
     public NewBillButton() {
-        super("Open new bill");
+        super("open new bill");
 
         this.addClickListener(e -> {
             this.setVisible(false);

@@ -9,15 +9,23 @@ import com.vaadin.flow.component.combobox.ComboBox;
 import com.vaadin.flow.component.datepicker.DatePicker;
 import com.vaadin.flow.component.orderedlayout.VerticalLayout;
 import com.vaadin.flow.component.textfield.NumberField;
+import com.vaadin.flow.data.binder.Binder;
 
 import java.math.BigDecimal;
 
 public class ExpanditureCreator extends VerticalLayout {
 
+    private Binder<Expenditure> binder;
+
     public ExpanditureCreator(ExpenditureService expenditureService,
                               User user) {
 
+        binder = new Binder<>();
         NumberField amountNumberfield = new NumberField("set amount");
+        //TODO:binder
+/*        binder.forField(amountNumberfield)
+                .withValidator(field -> field != null,"Field cannot be empty")
+                .bind(Expenditure::getAmount, Expenditure::setAmount);*/
         DatePicker setDatePicker = new DatePicker("set date");
         ComboBox<Type> comboBox = new ComboBox<>();
         comboBox.setItems(Type.values());
